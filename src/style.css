@@ -1,6 +1,78 @@
+body {
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 100%,
+    rgb(63, 76, 119) 100%
+  );
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+select {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: transparent;
+  opacity: 0.9;
+}
 h1 {
   text-align: center;
 }
+
+h2 {
+  margin: 0 0 7px;
+  font-size: 30px;
+}
+
 footer {
   text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: white;
+  padding: 20px 30px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.city {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  padding: 30px 0px;
+  border-bottom: 1px dashed white;
+}
+.city:last-child {
+  border: none;
+}
+.city-country {
+  padding: 13px 0px;
+}
+
+.country {
+  opacity: 0.4;
+}
+
+.time {
+  font-size: 45px;
+}
+.time small {
+  font-size: 30px;
+}
+
+.date {
+  opacity: 0.4;
 }
