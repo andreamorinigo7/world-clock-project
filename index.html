@@ -15,13 +15,15 @@
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
+      <h1><a href="/" class="title-link">World Clock</a></h1>
       <select id="city">
         <option value="">Select a country ...</option>
         <option value="current">My current location...</option>
-        <option value="America/New_York">New York</option>
-        <option value="Australia/Sydney">Sydney</option>
-        <option value="Europe/London">London</option>
+        <option value="America/Los_Angeles">Los Angeles, United States</option>
+        <option value="Asia/Shanghai">Shanghai, China</option>
+        <option value="Europe/London">London, England</option>
+        <option value="Europe/Athens">Athens, Greece</option>
+        <option value="Europe/Bratislava">Bratislava, Slovakia</option>
       </select>
 
       <div id="cities">
@@ -46,11 +48,35 @@
             <div class="date"></div>
           </div>
         </div>
+
+        <div class="city" id="tokyo">
+          <div class="city-country">
+            <h2>Tokyo</h2>
+            <div class="country">Japan</div>
+          </div>
+          <div class="time-date">
+            <div class="time"></div>
+            <div class="date"></div>
+          </div>
+        </div>
+
+        <div class="city" id="seoul">
+          <div class="city-country">
+            <h2>Seoul</h2>
+            <div class="country">Korea</div>
+          </div>
+          <div class="time-date">
+            <div class="time"></div>
+            <div class="date"></div>
+          </div>
+        </div>
       </div>
     </div>
     <footer>
       This project was coded by Andrea Morinigo on
-      <a href="https://github.com/andreamorinigo7/world-clock-project"
+      <a
+        href="https://github.com/andreamorinigo7/world-clock-project"
+        class="footer-link"
         >GitHub</a
       >
     </footer>

@@ -10,6 +10,7 @@ function updateCity() {
     "h:mm:ss [<small>] A [</small>]"
   );
 
+  //lima
   let limaElement = document.querySelector("#lima");
   let limaDateElement = limaElement.querySelector(".date");
   let limaTimeElement = limaElement.querySelector(".time");
@@ -18,8 +19,33 @@ function updateCity() {
   limaDateElement.innerHTML = limaTime.format("MMMM Do YYYY");
 
   limaTimeElement.innerHTML = limaTime.format("h:mm:ss [<small>] A [</small>]");
+
+  //tokyo
+  let tokyoElement = document.querySelector("#tokyo");
+  let tokyoDateElement = tokyoElement.querySelector(".date");
+  let tokyoTimeElement = tokyoElement.querySelector(".time");
+  let tokyoTime = moment().tz("Asia/Tokyo");
+
+  tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+
+  tokyoTimeElement.innerHTML = tokyoTime.format(
+    "h:mm:ss [<small>] A [</small>]"
+  );
+
+  //seoul
+  let seoulElement = document.querySelector("#seoul");
+  let seoulDateElement = seoulElement.querySelector(".date");
+  let seoulTimeElement = seoulElement.querySelector(".time");
+  let seoulTime = moment().tz("Asia/Seoul");
+
+  seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
+
+  seoulTimeElement.innerHTML = seoulTime.format(
+    "h:mm:ss [<small>] A [</small>]"
+  );
 }
 
+//city drop down
 function updateSelectCities(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
@@ -27,6 +53,7 @@ function updateSelectCities(event) {
   }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let countryName = cityTimeZone.split("/")[0];
+
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
 
@@ -42,7 +69,8 @@ function updateSelectCities(event) {
             <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           
         </div>
-      </div>`;
+      </div>
+      <a href = "/">🏠</a>`;
 }
 
 updateCity();

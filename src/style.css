@@ -21,6 +21,11 @@ h1 {
   text-align: center;
 }
 
+.title-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
 h2 {
   margin: 0 0 7px;
   font-size: 30px;
@@ -29,13 +34,6 @@ h2 {
 footer {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
-}
-a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-a:hover {
-  text-decoration: underline;
 }
 
 .container {
@@ -75,4 +73,12 @@ a:hover {
 
 .date {
   opacity: 0.4;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer-link:hover {
+  text-decoration: underline;
 }
