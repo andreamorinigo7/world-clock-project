@@ -46,35 +46,45 @@ function updateCity() {
 }
 
 //city drop down
+function updateSelectedCity(cityTimeZone) {
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let countryName = cityTimeZone.split("/")[0];
+
+  function updateTime() {
+    let cityTime = moment().tz(cityTimeZone);
+    let citiesElement = document.querySelector("#cities");
+
+    citiesElement.innerHTML = `<div class="city" >
+          <div >
+              <h2>${cityName}</h2>
+              <div class="country">${countryName}</div>
+            </div>
+            <div class="time-date">
+              <div class="time">${cityTime.format(
+                "h:mm:ss "
+              )}  <small> ${cityTime.format("A")}  </small></div>
+              <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+            </div>
+          </div>
+          <a href = "/">🏠</a>`;
+  }
+
+  updateTime(); // Call the function once immediately
+  setInterval(updateTime, 1000); // Then set it to run every second
+}
+
 function updateSelectCities(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let countryName = cityTimeZone.split("/")[0];
-
-  let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
-
-  citiesElement.innerHTML = `<div class="city" >
-        <div >
-            <h2>${cityName}</h2>
-            <div class="country">${countryName}</div>
-          </div>
-          <div class="time-date">
-            <div class="time">${cityTime.format(
-              "h:mm:ss "
-            )}  <small> ${cityTime.format("A")}  </small></div>
-            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
-          
-        </div>
-      </div>
-      <a href = "/">🏠</a>`;
+  updateSelectedCity(cityTimeZone);
 }
 
+// Initial call to update fixed cities like New York, Lima, etc.
 updateCity();
-setInterval(updateCity, 1000);
+setInterval(updateCity, 1000); // This updates the fixed cities every second
 
+// Dropdown city selection event listener
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateSelectCities);
